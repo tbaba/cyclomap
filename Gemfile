@@ -30,4 +30,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Development
-gem 'spring',        group: :development
+group :development, :test do
+  gem 'spring'
+  gem 'dotenv-rails'
+end
