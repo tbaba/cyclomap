@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   devise :trackable, :omniauthable
 
+  mount_uploader :profile_image, ProfileImageUploader
+
   class << self
     def authenticate(auth)
       where(auth.slice(:uid, :provider)).first_or_create do |user|
