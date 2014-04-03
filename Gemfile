@@ -13,6 +13,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+# Storage
+gem 'carrierwave'
+
 # Design and Frontend
 gem 'sass-rails',   '~> 4.0.1'
 gem 'coffee-rails', '~> 4.0.0'
