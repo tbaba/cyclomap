@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325105457) do
+ActiveRecord::Schema.define(version: 20140403004346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cyclists", force: true do |t|
+  create_table "courses", force: true do |t|
+    t.string   "title",      null: false
+    t.text     "body"
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
     t.integer  "sign_in_count",                default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"

@@ -1,8 +1,8 @@
-class Cyclist < ActiveRecord::Base
+class User < ActiveRecord::Base
   devise :trackable, :omniauthable
 
   class << self
-    def find_by_twitter_auth(auth)
+    def authenticate(auth)
       where(auth.slice(:uid, :provider)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
@@ -10,4 +10,6 @@ class Cyclist < ActiveRecord::Base
       end
     end
   end
+
+  has_many :courses, dependent: :destroy
 end
