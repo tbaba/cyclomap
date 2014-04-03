@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'authentication' }
 
-  resources :courses, only: [:new, :create]
+  resources :courses, only: [:new, :create, :show]
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,21 @@
+%section
+  %h2
+    コースの登録
+
+  = form_for @course do |f|
+    - if @course.errors.any?
+      %ul
+        - @course.errors.full_messages.each do |e|
+          %li= e
+
+    .field
+      = f.label :title
+      = f.text_field :title
+
+    .field
+      = f.label :body
+      = f.text_area :body
+
+    .field.button-nav
+      %ul
+        %li= f.button fa_icon('check', text: '登録する'), type: 'submit'
