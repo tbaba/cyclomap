@@ -1,4 +1,4 @@
-class Cyclist < ActiveRecord::Base
+class User < ActiveRecord::Base
   devise :trackable, :omniauthable
 
   class << self
