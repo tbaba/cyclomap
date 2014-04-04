@@ -23,7 +23,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'compass-rails'
 gem 'font-awesome-rails'
-gem 'turbolinks'
 gem 'haml-rails'
 
 # API
