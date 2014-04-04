@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'compass-rails'
 gem 'font-awesome-rails'
 gem 'haml-rails'
+gem 'bootstrap-sass'
 
 # API
 gem 'jbuilder', '~> 2.0'
