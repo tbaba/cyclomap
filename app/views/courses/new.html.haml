@@ -2,24 +2,24 @@
   %h2
     コースの登録
 
-  = form_for @course do |f|
+  = form_for @course, html: { role: 'form' } do |f|
     - if @course.errors.any?
       %ul
         - @course.errors.full_messages.each do |e|
           %li= e
 
-    .field
+    .form-group
       = f.label :title
-      = f.text_field :title
+      = f.text_field :title, class: 'form-control'
 
-    .field
+    .form-group
       = f.label :body
-      = f.text_area :body
+      = f.text_area :body, class: 'form-control'
 
-    .field
+    .form-group
       = f.label :route_lab_url
-      = f.text_field :route_lab_url
+      = f.text_field :route_lab_url, class: 'form-control'
 
-    .field.button-nav
-      %ul
-        %li= f.button fa_icon('check', text: '登録する'), type: 'submit'
+    .form-group.button-nav
+      %ul.list-unstyled
+        %li= f.button fa_icon('check', text: '登録する'), type: 'submit', class: 'btn btn-primary'
