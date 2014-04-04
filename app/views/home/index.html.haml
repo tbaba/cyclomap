@@ -1,6 +1,4 @@
-%h1 Home#index
+%h2 Home#index
 
 - if user_signed_in?
   = "Hello, #{current_user.screen_name}!"
-- else
-  = link_to 'Login with Twitter', user_omniauth_authorize_path(:twitter), data: { 'no-turbolink' => true }

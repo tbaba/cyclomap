@@ -9,6 +9,21 @@
     = csrf_meta_tags
 
   %body
+    .header-nav
+      %header
+        .brand
+          %h1 Cyclomap
+        .user-nav
+          %nav
+            %ul
+              - if user_signed_in?
+                %li.user-info
+                  %span.face= image_tag current_user.profile_image
+                  %span.name= current_user.screen_name
+                %li= link_to 'Logout', destroy_user_session_path, method: :delete
+              - else
+                %li= link_to 'Login with Twitter', user_omniauth_authorize_path(:twitter)
+
     - if notice
       %p.notice= notice
     - if alert
