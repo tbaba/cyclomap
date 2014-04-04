@@ -5,11 +5,10 @@ class User < ActiveRecord::Base
 
   class << self
     def authenticate(auth)
-      where(auth.slice(:uid, :provider)).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.screen_name = auth.info.nickname
-      end
+      profile_image_url = auth.info.image.gsub!(/_normal/, '')
+      user = where(auth.slice(:uid, :provider)).first_or_initialize
+      user.update screen_name: auth.info.nickname, remote_profile_image_url: profile_image_url
+      user
     end
   end
 
