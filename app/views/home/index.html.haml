@@ -3,3 +3,4 @@
   - @new_courses.each do |course|
     %article
       %h3= course.title
+      = route_lab_course(course.route_lab_id)
