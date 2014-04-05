@@ -1,6 +1,7 @@
-%section
-  %h2 新着コース
-  - @new_courses.each do |course|
-    %article
-      %h3= course.title
-      = route_lab_course(course.route_lab_id)
+.col-md-8
+  %section
+    %h2 新着コース
+    - @new_courses.each do |course|
+      %article
+        %h3= course.title
+        = route_lab_course(course.route_lab_id)
