@@ -1,0 +1,16 @@
+.user-header
+  %section
+    %h2
+      %span.face= image_tag @user.profile_image
+      %span.name= @user.screen_name
+
+.row
+  .col-md-8
+    %section
+      %h3
+        = @user.screen_name
+        がアップしたコース
+      
+      - @courses.each do |course|
+        %article
+          %h3= course.title
