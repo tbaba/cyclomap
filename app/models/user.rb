@@ -13,4 +13,6 @@ class User < ActiveRecord::Base
   end
 
   has_many :courses, dependent: :destroy
+  has_many :stars
+  has_many :given_stars, through: :courses, source: :stars
 end
