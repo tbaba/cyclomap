@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  resources :courses, only: [:new, :create, :show]
+  resources :courses, only: [:new, :create, :show] do
+    resources :stars, only: [:create]
+  end
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

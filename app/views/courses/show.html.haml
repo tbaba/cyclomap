@@ -3,3 +3,8 @@
 
   = route_lab_course(@course.route_lab_id)
   = simple_format @course.body
+
+  %aside
+    = link_to course_stars_path(@course), method: :post, class: 'btn btn-lg btn-primary' do
+      %i.fa.fa-star
+    = @course.stars.count
