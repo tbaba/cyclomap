@@ -43,4 +43,7 @@ RSpec.configure do |config|
 
   # include simple factory_girl api
   config.include FactoryGirl::Syntax::Methods
+
+  # include devise test helper to use test apis on controller spec
+  config.include Devise::TestHelpers, type: :controller
 end
