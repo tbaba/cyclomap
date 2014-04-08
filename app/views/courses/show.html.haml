@@ -5,6 +5,7 @@
   = simple_format @course.body
 
   %aside
-    = link_to course_stars_path(@course), method: :post, class: 'btn btn-lg btn-primary' do
-      %i.fa.fa-star
+    - if user_signed_in?
+      = link_to course_stars_path(@course), method: :post, class: 'btn btn-lg btn-primary new-star-link' do
+        %i.fa.fa-star
     = @course.stars.count
