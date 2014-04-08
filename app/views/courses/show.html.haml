@@ -1,3 +1,5 @@
-%h2= @course.title
+%article
+  %h2= @course.title
 
-= simple_format @course.body
+  = route_lab_course(@course.route_lab_id)
+  = simple_format @course.body
