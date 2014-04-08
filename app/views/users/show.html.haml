@@ -1,11 +1,24 @@
 .user-header
   %section
     %h2
-      %span.face= image_tag @user.profile_image
-      %span.name= @user.screen_name
+      .face.text-center= image_tag @user.profile_image, class: 'img-circle'
+      .name.text-center= @user.screen_name
+
+    .info.text-center
+      .row
+        %ul
+          %li.col-xs-4
+            %span.count= @user.courses.count
+            %span.title 投稿数
+          %li.col-xs-4
+            %span.count= @user.given_stars.count
+            %span.title もらったスター
+          %li.col-xs-4
+            %span.count= @user.stars.count
+            %span.title 付けたスター
 
 .row
-  .col-md-8
+  .col-xs-8
     %section
       %h3
         = @user.screen_name
@@ -13,4 +26,12 @@
       
       - @courses.each do |course|
         %article
-          %h3= course.title
+          %h3= link_to course.title, course
+
+  .col-xs-4
+    %section
+      %nav
+        = link_to 'コース登録', new_course_path, class: 'btn btn-block btn-primary'
+    %section
+      %h3
+        人気のコース

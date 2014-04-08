@@ -1,5 +1,6 @@
 @charset 'utf-8'
 
+// components
 @import compass/reset
 @import compass/css3
 @import bootstrap
@@ -8,9 +9,51 @@
  * header-nav
  */
 
+$default-bg-color: #ecf0f1
+
+body
+  background-color: $default-bg-color
+
+.count-num
+  font-family: 'Titillium Web'
+  font-weight: 200
+  font-size: 24px
+
 .navbar .face > img
   height: 40px
   margin: 5px
+
+.nav > li > a.nav-user-link
+  padding-top: 0px
+  padding-bottom: 0px
+
+.container
+  width: 800px
+
+.user-header
+  +background-size(cover)
+  margin-bottom: 30px
+  .face
+    margin-bottom: 10px
+    &> img
+      width: 200px
+
+  .info
+    width: 480px
+    margin: 20px auto
+    background-color: white
+    +border-radius(6px)
+    padding: 10px
+    li
+      display: inline-block
+      list-style: none
+      font-size: 12px
+      span
+        display: block
+        &.count
+          font-size: 24px
+          font-family: 'Titillium Web'
+          font-weight: 200
 
 .stars-count
   display: inline-block
@@ -22,8 +65,3 @@
   i, span
     display: table-cell
     vertical-align: middle
-
-.count-num
-  font-family: 'Titillium Web'
-  font-weight: 200
-  font-size: 24px

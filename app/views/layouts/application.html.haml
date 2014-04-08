@@ -3,6 +3,7 @@
   %head
     %title Cyclomap
     %meta{ charset: 'utf-8' }
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Titillium+Web:300,200'
     = stylesheet_link_tag 'font-awesome', media: 'all'
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -16,8 +17,9 @@
         %ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
             %li.user-info
-              %span.face= image_tag current_user.profile_image, class: 'img-circle'
-              %span.name= current_user.screen_name
+              = link_to current_user, class: 'nav-user-link' do
+                %span.face= image_tag current_user.profile_image, class: 'img-circle'
+                %span.name= current_user.screen_name
             %li= link_to 'Logout', destroy_user_session_path, method: :delete
           - else
             %li= link_to 'Login with Twitter', user_omniauth_authorize_path(:twitter)

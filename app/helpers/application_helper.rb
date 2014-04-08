@@ -6,8 +6,8 @@ module ApplicationHelper
     url = Addressable::URI.parse url
     url.query = {
       id: route_lab_id,
-      width: 640,
-      height: 480,
+      width: 770,
+      height: 400,
       mapstyle: 'map',
       graph: true,
       maponly: false
