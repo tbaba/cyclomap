@@ -35,3 +35,8 @@
     %section
       %h3
         人気のコース
+
+      %ul
+        - @popular_courses.each do |course|
+          %li
+            = link_to course.title, course
