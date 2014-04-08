@@ -1,7 +1,11 @@
 .col-md-8
-  %section
+  %section.new-courses
     %h2 新着コース
     - @new_courses.each do |course|
       %article
-        %h3= course.title
+        %h3
+          %span.name= course.title
+          .stars-count
+            %i.fa.fa-star
+            %span.count-num= course.stars.count
         = route_lab_course(course.route_lab_id)

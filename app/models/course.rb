@@ -2,6 +2,7 @@ class Course < ActiveRecord::Base
   ROUTE_LAB_URL_REGEX = %r{http://latlonglab\.yahoo\.co\.jp/route/watch\?id=([A-Za-z0-9_-]*)}
 
   belongs_to :user
+  has_many :stars
 
   attr_accessor :route_lab_url
 
