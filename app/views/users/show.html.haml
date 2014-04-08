@@ -20,18 +20,13 @@
 .row
   .col-xs-8
     %section
-      %h3
-        = @user.screen_name
-        がアップしたコース
+      %h3 アップしたコース
       
       - @courses.each do |course|
         %article
           %h3= link_to course.title, course
 
   .col-xs-4
-    %section
-      %nav
-        = link_to 'コース登録', new_course_path, class: 'btn btn-block btn-primary'
     %section
       %h3
         人気のコース
