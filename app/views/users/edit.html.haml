@@ -1,0 +1,14 @@
+%section
+  %h2
+    ユーザー情報の編集
+
+  = form_for @user, html: { role: 'form' } do |f|
+    = render 'error_explanation', model: @user
+
+    .form-group
+      = f.label :screen_name
+      = f.text_field :screen_name, class: 'form-control'
+
+    .form-group.button-nav
+      %ul.list-unstyled
+        %li= f.button fa_icon('check', text: '登録する'), type: 'submit', class: 'btn btn-success submit-button'

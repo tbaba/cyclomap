@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
     def authenticate(auth)
       profile_image_url = auth.info.image.gsub!(/_normal/, '')
       user = where(auth.slice(:uid, :provider)).first_or_initialize
-      user.update screen_name: auth.info.nickname, remote_profile_image_url: profile_image_url
+      user.screen_name ||= auth.info.nickname
+      user.remote_profile_image_url = profile_image_url
+      user.save
       user
     end
   end
