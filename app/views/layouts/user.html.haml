@@ -1,0 +1,26 @@
+= content_for :content do
+  .user-header
+    %section
+      %h2
+        .face.text-center= image_tag @user.profile_image, class: 'img-circle'
+        .name.text-center
+          = @user.screen_name
+          - if user_signed_in? && @user == current_user
+            = link_to fa_icon('pencil-square-o'), edit_user_path(@user), class: 'edit-user-link'
+
+      .info.text-center
+        .row
+          %ul
+            %li.col-xs-4
+              %span.count= @user.courses.count
+              %span.title 投稿数
+            %li.col-xs-4
+              %span.count= @user.given_stars.count
+              %span.title もらったスター
+            %li.col-xs-4
+              %span.count= @user.stars.count
+              %span.title 付けたスター
+  .container
+    = yield
+
+= render file: 'layouts/application'
