@@ -46,3 +46,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
 end
+
+group :production do
+  gem 'newrelic_rpm'
+end
