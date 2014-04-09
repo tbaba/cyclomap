@@ -16,6 +16,7 @@ gem 'omniauth-twitter'
 
 # Storage
 gem 'carrierwave'
+gem 'fog'
 
 # Design and Frontend
 gem 'sass-rails',   '~> 4.0.1'
