@@ -8,6 +8,10 @@ class Course < ActiveRecord::Base
 
   before_save :set_route_lab_id
 
+  validates :title, presence: true, length: { maximum: 5000 }
+  validates :body, presence: true, length: { maximum: 50000 }
+  validates :route_lab_url, format: { with: URI.regexp(%w(http https)), allow_blank: true }
+
   private
 
   def set_route_lab_id

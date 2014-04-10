@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
   has_many :courses, dependent: :destroy
   has_many :stars
   has_many :given_stars, through: :courses, source: :stars
+
+  validates :screen_name, presence: true, length: { maximum: 50 }
 end
