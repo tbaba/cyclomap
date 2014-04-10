@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      course: 'コース'
+      star: 'スター'
+
+    attributes:
+      user:
+        screen_name: 'ユーザー名'
+        profile_image: 'プロフィール画像'
+      course:
+        title: 'タイトル'
+        body: '詳細'
+        route_lab_id: 'ルートラボID'
+        route_lab_url: 'ルートラボURL'
