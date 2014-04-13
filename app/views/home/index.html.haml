@@ -3,7 +3,7 @@
   - @new_courses.each do |course|
     %article
       %h3
-        %span.name= course.title
+        %span.name= link_to course.title, course
         .stars-count
           %i.fa.fa-star
           %span.count-num= course.stars.count
