@@ -9,7 +9,7 @@ class StarsController < ApplicationController
     if @star.save
       redirect_to @course, notice: 'スターを付けました'
     else
-      redirect_to @course, alert: @course.errors.full_messages.join('\n')
+      redirect_to @course, alert: @star.errors.full_messages.join('\n')
     end
   end
 

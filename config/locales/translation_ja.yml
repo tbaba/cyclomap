@@ -14,3 +14,6 @@ ja:
         body: '詳細'
         route_lab_id: 'ルートラボID'
         route_lab_url: 'ルートラボURL'
+      star:
+        user_id: 'ユーザー'
+        course_id: 'コース'
