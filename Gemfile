@@ -29,6 +29,9 @@ gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 
+# Implementation
+gem 'acts-as-taggable-on'
+
 # API
 gem 'jbuilder', '~> 2.0'
 gem 'addressable'
