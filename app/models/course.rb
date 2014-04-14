@@ -1,4 +1,6 @@
 class Course < ActiveRecord::Base
+  acts_as_taggable
+
   ROUTE_LAB_URL_REGEX = %r{http://latlonglab\.yahoo\.co\.jp/route/watch\?id=([A-Za-z0-9_-]*)}
 
   belongs_to :user
