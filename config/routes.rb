@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :courses, only: [:new, :create, :show] do
+    get 'tagged/:tag_name' => 'courses#tagged', as: 'tagged', on: :collection
     resources :stars, only: [:create]
   end
 

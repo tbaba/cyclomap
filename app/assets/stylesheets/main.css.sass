@@ -66,6 +66,20 @@ body
           font-family: 'Titillium Web'
           font-weight: 200
 
+
+h3 a 
+  &> .title
+    display: inline-block
+    vertical-align: middle
+
+  &> .star
+    display: inline-block
+    vertical-align: middle
+    background-color: #f1c40f
+    color: white
+    &:hover
+      color: white
+
 .stars-count
   display: inline-block
   font-size: 16px
@@ -79,6 +93,8 @@ body
 
 .tags > .tag
   display: inline-block
+  a
+    color: white
 
 .tag-cloud
   .tag1

@@ -5,7 +5,7 @@
     %ul.tags
       - @course.tags.each do |tagging|
         %li.tag
-          %span.btn.btn-info.btn-xs= tagging.name
+          %span.btn.btn-info.btn-xs= link_to tagging.name, tagged_courses_path(tag_name: tagging.name)
 
   = route_lab_course(@course.route_lab_id)
   = simple_format @course.body

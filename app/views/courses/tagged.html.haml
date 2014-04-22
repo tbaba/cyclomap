@@ -1,0 +1,15 @@
+%section.tagged-courses
+  %h2
+    = fa_icon('map-marker')
+    = @tag_name
+    のコース
+
+  %ul.list-unstyled
+    - @courses.each do |course|
+      %li
+        %h3
+          = link_to course do
+            %span.title
+              = course.title
+            %span.star.btn.btn-sm
+              = fa_icon('star', text: course.stars_count)

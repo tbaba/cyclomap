@@ -3,6 +3,11 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show]
   before_action :set_user, only: [:new, :create]
 
+  def tagged
+    @tag_name = params[:tag_name]
+    @courses = Course.tagged_with(@tag_name).order('created_at desc')
+  end
+
   def show; end
 
   def new
