@@ -8,8 +8,7 @@
     - @courses.each do |course|
       %li
         %h3
-          = link_to course do
-            %span.title
-              = course.title
-            %span.star.btn.btn-sm
-              = fa_icon('star', text: course.stars_count)
+          %span.title
+            = link_to course.title, course
+          %span.star.btn.btn-sm
+            = fa_icon('star', text: course.stars_count)
