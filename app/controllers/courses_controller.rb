@@ -1,7 +1,12 @@
 class CoursesController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :tagged]
   before_action :set_course, only: [:show]
   before_action :set_user, only: [:new, :create]
+
+  def tagged
+    @tag_name = params[:tag_name]
+    @courses = Course.tagged_with(@tag_name).order('created_at desc')
+  end
 
   def show; end
 
@@ -31,6 +36,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :body, :route_lab_url)
+    params.require(:course).permit(:title, :body, :route_lab_url, :tag_list)
   end
 end

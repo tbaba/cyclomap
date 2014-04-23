@@ -16,3 +16,11 @@
         - @popular_courses.each do |course|
           %li
             = link_to course.title, course
+    %section
+      %h3
+        タグクラウド
+
+      %ul.tag-cloud
+        - @tags = @user.courses.tag_counts_on(:tags)
+        - tag_cloud(@tags, %w(tag1 tag2 tag3 tag4)) do |tagg, css_class|
+          %span{ class: css_class }= link_to tagg.name, tagged_courses_path(tag_name: tagg.name)

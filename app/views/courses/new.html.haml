@@ -17,6 +17,11 @@
       = f.label :route_lab_url
       = f.text_field :route_lab_url, class: 'form-control'
 
+    .form-group
+      = f.label :tag_list
+      = f.text_field :tag_list, class: 'form-control'
+      %span.help-block= ',（カンマ）区切りで入力してください'
+
     .form-group.button-nav
       %ul.list-unstyled
         %li= f.button fa_icon('check', text: '登録する'), type: 'submit', class: 'btn btn-primary'
