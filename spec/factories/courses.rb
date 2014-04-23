@@ -6,10 +6,10 @@ FactoryGirl.define do
     body { Faker::Lorem.paragraph }
     route_lab_id { SecureRandom.hex }
 
-    after(:create) do |course, evaluator|
+    before(:create) do |course, evaluator|
       if course.user.nil?
         user = FactoryGirl.create(:user)
-        course.update_attributes! user_id: user.id
+        course.user_id = user.id
       end
     end
   end
