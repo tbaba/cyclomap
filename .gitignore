@@ -16,5 +16,7 @@
 /tmp
 
 /.env
+/.coveralls.yml
 
 /public/uploads
+/coverage
