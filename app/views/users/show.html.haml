@@ -2,7 +2,7 @@
   .col-xs-8
     %section
       %h3 アップしたコース
-      
+
       - @courses.each do |course|
         %article
           %h3= link_to course.title, course
