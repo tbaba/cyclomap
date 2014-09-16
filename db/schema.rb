@@ -56,12 +56,15 @@ ActiveRecord::Schema.define(version: 20140414112424) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.integer  "sign_in_count",             default: 0, null: false
+    t.integer  "sign_in_count",                default: 0, null: false
+    t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
-    t.integer  "uid",             limit: 8
+    t.integer  "uid",                limit: 8
     t.string   "screen_name"
     t.string   "profile_image"
   end
