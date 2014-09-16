@@ -1,3 +1,5 @@
+{<img src="https://coveralls.io/repos/tbaba/cyclomap/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/tbaba/cyclomap]
+
 == README
 
 This README would normally document whatever steps are necessary to get the
