@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Framework
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.6'
 gem 'rails_12factor'
 gem 'rails-i18n', '~> 4.0.0'
 
